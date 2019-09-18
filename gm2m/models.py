@@ -79,7 +79,7 @@ def create_gm2m_intermediary_model(field, klass):
             on_delete=models.CASCADE,
             db_constraint=field.remote_field.db_constraint
         ),
-        FK_ATTNAME: models.CharField(max_length=fk_maxlength),
+        FK_ATTNAME: models.PositiveIntegerField(),
         TGT_ATTNAME: ct.GenericForeignKey(
             ct_field=CT_ATTNAME,
             fk_field=FK_ATTNAME,
